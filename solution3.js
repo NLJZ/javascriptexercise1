@@ -3,9 +3,11 @@
 // For example, oddishOrEvenish(121) should return "Evenish", since 1 + 2 + 1 = 4. oddishOrEvenish(41) should return "Oddish", since 4 + 1 = 5.
 
 const oddOrEvenish = num => {
-  let numStr = num.toString().split("");
-
-  console.log(numStr);
+  let added = num
+    .toString()
+    .split("")
+    .reduce((total, amount) => parseInt(total) + parseInt(amount));
+  let result = added % 2 == 0 ? console.log("Evenish") : console.log("Oddish");
 };
 
 oddOrEvenish(43);
